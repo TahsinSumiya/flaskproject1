@@ -1,0 +1,83 @@
+{% extends "layout.html" %}
+
+{% block body %}
+        <!-- Page Header-->
+        <header class="masthead" style="background-image: url('{{ url_for('static', filename='img/home-bg.jpg') }}')">
+            <div class="container position-relative px-4 px-lg-5">
+                <div class="row gx-4 gx-lg-5 justify-content-center">
+                    <div class="col-md-10 col-lg-8 col-xl-7">
+                        <div class="site-heading">
+                            <h1>ADMIN PANEL</h1>
+                            <span class="subheading">Manage your posts & change them</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <!-- Main Content-->
+        <div class="container px-4 px-lg-5">
+            <div class="row gx-4 gx-lg-5 justify-content-center">
+                <div class="col-md-10 col-lg-8 col-xl-7">
+
+                 <h1>Basic Actions</h1>
+                 <a href="/edit/0"><button class="btn btn-primary btn-sm">Add a new post</button></a>
+                 <a href="/logout"><button class="btn btn-primary btn-sm mx-4">Log Out</button></a>
+                 <hr>
+                 <!-- <a href="/edit/0"><button class="btn btn-primary">Add a new post</button></a> -->
+                     
+                     <h1>Upload a file</h1>
+                      <form action="/uploader"method="post" enctype="multipart/form-data">
+                       <input type="file"name= "file1">
+                       <button type="submit" class="btn btn-primary btn-sm">Upload</button>
+
+
+
+
+
+                      </form>
+
+
+
+
+                     <hr>
+                    <!-- table preview-->
+
+                    
+                
+                     <table class="table  ">
+                      <thead>
+                        <tr>
+                          <th class="table-success">Sno</th>
+                          <th class="table-primary">Title</th>
+                          <th class="table-secondary">Date</th>
+                          <th class="table-warning">Update</th>
+                          <th class="table-danger">Delete</th>
+
+                        </tr>
+                      </thead>
+                      <tbody>
+
+                        {% for post in posts %}
+                        <tr class="   ">
+                          <td class="table-success border-bottom-0 ">{{post.sno}}</td>
+                          <td class="table-primary border-bottom-0  ">{{post.title}}</td>
+                          <td class="table-secondary border-bottom-0 w-25">{{post.date}}</td>
+                          <td class="table-warning border-bottom-0 "><a href="/edit/{{post.sno}}"><button class="btn-sm btn-warning rounded-pill" >Edit</button></a></td>
+                          <td class="table-danger border-bottom-0  "><a href="/delete/{{post.sno}}"><button class="btn-sm btn-danger rounded-pill" >Delete</button></a></td>
+                          <td></td>
+                        </tr>
+                         
+                         {% endfor %} 
+                      </tbody>
+                    </table> 
+
+
+                    
+          	
+                        
+                  </div>
+                </div>
+              </div>
+    
+        <!-- Footer-->
+      {% endblock %}  

@@ -1,0 +1,23 @@
+{
+
+"params":
+{
+    "local_server":"True",
+    "local_uri": "mysql://root:@localhost/the blog",
+    "prod_uri": "mysql://root:@localhost/the blog",
+    "fb_url":"https://facebook.com",
+    "tw_url":"https://twitter.com",
+    "git_url":"https://github.com",
+    "blog_name": "CHICKEN",
+    "tagline":"A Blog by chicken!!!",
+    "gmail-user":"tahsinadity187@gmail.com",
+    "gmail-password":"deadsoul187",
+    "about-text": "Hi page is about learning web developing with python and flask and most important chicken",
+    "no-of-posts":3,
+    "login_img":"login.png",
+    "admin_user":"Adity",
+    "admin_pass":"adi1870",
+    "upload_location":"D:\\adi\\pythonfiles\\flaskProject\\static\\img"
+
+}
+}
